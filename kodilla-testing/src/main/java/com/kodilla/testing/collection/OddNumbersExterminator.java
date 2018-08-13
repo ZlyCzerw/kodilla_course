@@ -4,13 +4,6 @@ import java.util.ArrayList;
 
 public class OddNumbersExterminator {
 
-    //ArrayList<Integer>list = new ArrayList<>();
-    public OddNumbersExterminator(ArrayList<Integer> list){
-       // this.list = list;
-
-    }
-
-
 
     public ArrayList exterminate(ArrayList<Integer> numbers){
         ArrayList<Integer> evenNumbers = new ArrayList<>();

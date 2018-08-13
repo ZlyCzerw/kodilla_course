@@ -3,7 +3,6 @@ package com.kodilla.testing.collection;
 import org.junit.*;
 
 import java.util.ArrayList;
-import com.kodilla.testing.collection.OddNumbersExterminator;
 
 public class CollectionTestSuite {
 
@@ -19,7 +18,6 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
 
-
         //Given
         ArrayList<Integer> normalList = new ArrayList<>();
         normalList.add(62);
@@ -30,9 +28,9 @@ public class CollectionTestSuite {
         normalList.add(0);
         normalList.add(11111);
 
-        OddNumbersExterminator list = new OddNumbersExterminator(normalList);
-        //While
+       OddNumbersExterminator list = new OddNumbersExterminator();
 
+        //While
         ArrayList<Integer> result = list.exterminate(normalList);
 
         //Then
@@ -40,22 +38,20 @@ public class CollectionTestSuite {
 
             Assert.assertEquals(0, r % 2);
         }
+
     }
 
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
         ArrayList<Integer> emptyList = new ArrayList<>();
-        OddNumbersExterminator list = new OddNumbersExterminator(emptyList);
+        OddNumbersExterminator list = new OddNumbersExterminator();
         //While
 
         ArrayList<Integer> result = list.exterminate(emptyList);
 
         //Then
-        for (int r : result) {
-
-            Assert.assertEquals(0, r % 2);
-        }
+       Assert.assertEquals(emptyList, result);
 
     }
 }
