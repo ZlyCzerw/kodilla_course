@@ -1,6 +1,7 @@
 package com.kodilla.testing.collection;
 
 import org.junit.*;
+import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.ArrayList;
 
@@ -28,16 +29,22 @@ public class CollectionTestSuite {
         normalList.add(0);
         normalList.add(11111);
 
+        ArrayList<Integer> evenList = new ArrayList<>();
+        evenList.add(62);
+        evenList.add(98);
+        evenList.add(22);
+        evenList.add(98);
+        evenList.add(0);
+
        OddNumbersExterminator list = new OddNumbersExterminator();
 
         //While
         ArrayList<Integer> result = list.exterminate(normalList);
 
         //Then
-        for (int r : result) {
+        Assert.assertTrue(evenList.equals(result));
+        Assert.assertEquals(evenList,result);
 
-            Assert.assertEquals(0, r % 2);
-        }
 
     }
 
