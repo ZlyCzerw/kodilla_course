@@ -49,15 +49,15 @@ public class CalculateStatistics {
 
         commentsNo=statistics.commentsCount();
         if(usersNo!=0) {
-            postsPerUser = poststNo / usersNo;
-            commentsPerUser = commentsNo / usersNo;
+            postsPerUser = (double)poststNo / (double)usersNo;
+            commentsPerUser = (double)commentsNo /(double) usersNo;
         } else {
 
             System.out.println("liczba userów wynosi zero, statystyka to kłamstwo");
         }
 
         if (poststNo!=0){
-            commentsPerPost = commentsNo / poststNo;
+            commentsPerPost = (double) commentsNo / (double) poststNo;
         }else {
 
             System.out.println("nikt jeszcze nie postował");
