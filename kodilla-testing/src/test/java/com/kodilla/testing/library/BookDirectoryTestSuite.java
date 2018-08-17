@@ -89,7 +89,7 @@ public class BookDirectoryTestSuite {
     }
 
     @Test
-    public void listBookInHandsOf() {
+    public void listBookInHandsOfZero() {
         //Given
         LibraryUser user1 = new LibraryUser("Marian", "Kolanko", "5101010154");
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
@@ -105,7 +105,7 @@ public class BookDirectoryTestSuite {
 
     }
     @Test
-    public void listBookInHandsOf_2() {
+    public void listBookInHandsOfFive() {
         //Given
         LibraryUser user2 = new LibraryUser("Zenon", "Arabowicz", "99101388798");
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
@@ -121,7 +121,7 @@ public class BookDirectoryTestSuite {
 
     }
     @Test
-    public void listBookInHandsOf_3() {
+    public void listBookInHandsOfOne() {
         //Given
         LibraryUser user2 = new LibraryUser("Anna", "Malina", "95554456554");
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
