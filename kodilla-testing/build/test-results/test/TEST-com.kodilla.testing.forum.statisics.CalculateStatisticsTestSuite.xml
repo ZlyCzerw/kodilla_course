@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" tests="7" skipped="0" failures="0" errors="0" timestamp="2018-08-16T10:36:08" hostname="LAPTOP-I2GOCPBG" time="0.413">
+  <properties/>
+  <testcase name="testCalculateAdvStaisticsWithMockHundredUsers0comments1000Posts" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.395"/>
+  <testcase name="testCalculateAdvStaisticsWithMockAllZeros" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStaisticsWithMockHundredUsersLessCommentsTheanPosts" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStaisticsWithMock0Users" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStaisticsWithMockHundredUsers" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.002"/>
+  <testcase name="testCalculateAdvStaisticsWithMockHundredUsers5000commentsLess1000Posts" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.003"/>
+  <testcase name="testCalculateAdvStaisticsWithMockHundredUsersNoPosts" classname="com.kodilla.testing.forum.statisics.CalculateStatisticsTestSuite" time="0.002"/>
+  <system-out><![CDATA[number of users100
+number of posts1000
+number of comments0
+posts per user10.0
+comments per user0.0
+comments per post0.0
+liczba userĂłw wynosi zero, statystyka to kĹ‚amstwo
+nikt jeszcze nie postowaĹ‚
+number of users0
+number of posts0
+number of comments0
+posts per user0.0
+comments per user0.0
+comments per post0.0
+number of users100
+number of posts2000
+number of comments1000
+posts per user20.0
+comments per user10.0
+comments per post0.5
+liczba userĂłw wynosi zero, statystyka to kĹ‚amstwo
+number of users0
+number of posts1000
+number of comments1000
+posts per user0.0
+comments per user0.0
+comments per post1.0
+nikt jeszcze nie postowaĹ‚
+number of users100
+number of posts0
+number of comments0
+posts per user0.0
+comments per user0.0
+comments per post0.0
+number of users100
+number of posts1000
+number of comments5000
+posts per user10.0
+comments per user50.0
+comments per post5.0
+nikt jeszcze nie postowaĹ‚
+number of users100
+number of posts0
+number of comments100
+posts per user0.0
+comments per user1.0
+comments per post0.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
