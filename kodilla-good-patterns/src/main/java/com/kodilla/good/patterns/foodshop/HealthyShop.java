@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.foodshop;
 
-public class HealthyShop extends Supplier  {
+public class HealthyShop implements Supplier  {
 
     private String shopName;
     private int quantity;

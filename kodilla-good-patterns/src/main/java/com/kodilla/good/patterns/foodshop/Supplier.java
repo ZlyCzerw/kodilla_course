@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.foodshop;
 
-public abstract class Supplier {
+interface Supplier {
 
-    public abstract boolean process();
+ boolean process();
 }

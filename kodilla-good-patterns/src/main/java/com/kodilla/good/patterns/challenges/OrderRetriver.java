@@ -9,6 +9,7 @@ public class OrderRetriver {
         User user = new User("marek","Warszawa" ,"marekzwarszawy@mail.pl");
         LocalDateTime orderDate =  LocalDateTime.of(2018,8,31,14,36);
         Product product = new Product("gąbka do zębów trzonowych", 19.99);
+
         return new OrderRequest (user,orderDate, product);
     }
 }

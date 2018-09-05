@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.foodshop;
 
-public class GlutenFreeShop extends Supplier {
+public class GlutenFreeShop implements Supplier {
     private String shopName;
     private double quantity;
     private Product product;
