@@ -26,8 +26,8 @@ public class FlightSearchEngine {
                 .collect(toList());
 
         System.out.println("Loty dostępne bezpośrednio z lotniska  " + homeAirport + ": " + searchedFlight);
-
         System.out.println("Wpisz nazwę lotniska docelowego:");
+
         Scanner destenation = new Scanner(System.in);
         String destenationAirport = destenation.nextLine();
 
@@ -38,24 +38,13 @@ public class FlightSearchEngine {
 
         System.out.println("Na lotnisko " + destenationAirport + " latamy z: " +flightsFrom);
 
-
         if (searchedFlight.toString().contains(destenationAirport)) {
             System.out.println("Istnieje bezpośrednie połączenie z " + homeAirport + " do " + destenationAirport);
         } else if (CollectionUtils.containsAny(searchedFlight,flightsFrom)) {
-                searchedFlight.remove(flightsFrom);
-
-            System.out.println("znaleziono lot(y) z przesiadką w " + searchedFlight);
+                flightsFrom.retainAll(searchedFlight);
+                System.out.println("znaleziono lot(y) z przesiadką w " + flightsFrom);
         } else {
-            System.out.println("nie znaleziono lotu");
-
-
-
+            System.out.println("Niestety nie znaleziono lotu z jedną przesiadką");
         }
-
-
-
-
-
     }
-
 }
