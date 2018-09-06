@@ -16,11 +16,6 @@ public class ExceptionModuleRunner extends ExceptionHandling {
         FileReader fileReader = new FileReader();
         SecondChallenge secondChallenge = new SecondChallenge();
 
-        //try {
-        //    fileReader.readFile();
-        //} catch (FileReaderException FRE) {
-        //    FRE.printStackTrace();
-        //}
         try {
             secondChallenge.probablyIWillThrowException(2,1);
         } catch ( ExceptionHandling eh ){

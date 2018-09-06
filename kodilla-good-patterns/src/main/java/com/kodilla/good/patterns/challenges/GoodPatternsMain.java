@@ -22,17 +22,7 @@ public class GoodPatternsMain {
 
     OrderRetriver orderRetriver = new OrderRetriver();
     OrderRequest request = orderRetriver.retrive();
-    ProductOrderService productOrderService = new ProductOrderService(new InformationService() {
-        @Override
-        public void inform(User user) {
-
-        }
-    }, new OrderService(), new OrderRepository() {
-        @Override
-        public void createOrder(User user, LocalDateTime orderDate, Product product) {
-
-        }
-    });
+    ProductOrderService productOrderService = new ProductOrderService(new InformationService() {}, new OrderService(), new OrderRepository() {});
         productOrderService.process(request);
     }
 }

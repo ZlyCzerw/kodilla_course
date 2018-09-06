@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges;
 
 public interface InformationService {
-   void inform(User user);
+   default void inform(User user){
+      System.out.println("e-mail has been send");;
+   }
 }
