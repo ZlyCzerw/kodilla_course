@@ -1,5 +1,6 @@
 package com.kodilla.good.patterns.airline;
 
+
 import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
