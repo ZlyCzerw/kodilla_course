@@ -20,11 +20,11 @@ public class BoardTestSuite {
         System.out.println(taskList1);
         TaskList taskList2 = board.getDoneList();
         taskList2.TaskList().add("bbb");
-        System.out.println(taskList1);
+        System.out.println(taskList2);
         TaskList taskList3 = board.getInProgressList();
         taskList3.TaskList().add("ccc");
-        System.out.println(taskList1);
+        System.out.println(taskList3);
         //Then
-        Assert.assertTrue(taskList1.TaskList().contains("aaa"));
+        Assert.assertTrue(!taskList1.getTasks().isEmpty());
     }
 }

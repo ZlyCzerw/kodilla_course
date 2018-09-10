@@ -1,17 +1,16 @@
 package com.kodilla.spring.portfolio;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Board {
 
-   @Autowired
-    private TaskList toDoList;
-   @Autowired
-    private TaskList doneList;
-   @Autowired
-    private TaskList inProgressList;
+    private final TaskList toDoList;
+    private final TaskList doneList;
+    private final TaskList inProgressList;
 
-    public Board() {
+    public Board(TaskList toDoList, TaskList doneList, TaskList inProgressList) {
     this.toDoList = toDoList;
     this.doneList = doneList;
     this.inProgressList = inProgressList;
