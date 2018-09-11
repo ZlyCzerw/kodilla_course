@@ -17,13 +17,10 @@ public class BoardTestSuite {
         //When
         TaskList taskList1 = board.getToDoList();
         taskList1.TaskList().add("aaa");
-        System.out.println(taskList1);
         TaskList taskList2 = board.getDoneList();
         taskList2.TaskList().add("bbb");
-        System.out.println(taskList2);
         TaskList taskList3 = board.getInProgressList();
         taskList3.TaskList().add("ccc");
-        System.out.println(taskList3);
         //Then
         Assert.assertTrue(!taskList1.getTasks().isEmpty());
     }
