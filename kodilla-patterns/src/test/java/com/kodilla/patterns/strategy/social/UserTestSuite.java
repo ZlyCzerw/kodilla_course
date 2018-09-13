@@ -33,7 +33,6 @@ public class UserTestSuite {
     public void testIndividualSharingStrategy(){
         //Given
         User Zbigniew = new Millenials("Zbigniew");
-       ;
         //When
         Zbigniew.setSocialPublisher(new TwitterPublisher());
         String zbigniewPublishAt = Zbigniew.socialPublisher.Share();
