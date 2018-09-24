@@ -2,6 +2,8 @@ package com.kodilla.patterns.factory.tasks;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.Spy;
 
 public class TaskFactoryTestSuite {
 
@@ -9,13 +11,17 @@ public class TaskFactoryTestSuite {
     public void shopingTaskTest(){
      //Given
      TaskFactory shopingTask = new TaskFactory();
+     Task spyTask = Mockito.spy(ShoppingTask.class);
      //When
         Task shopping = shopingTask.makeTask(TaskFactory.SHOPPING);
         shopping.executeTask();
+        spyTask.executeTask();
+
 
      //Then
+        Assert.assertEquals(true,spyTask.isTaskExecuted());
         Assert.assertEquals(true,shopping.isTaskExecuted());
-        Assert.assertEquals("Groceries",shopping.getTaskName());
+
 
     }
     @Test
@@ -23,12 +29,12 @@ public class TaskFactoryTestSuite {
         //Given
         TaskFactory task = new TaskFactory();
         //Whendr
-        PaintingTask painting = (PaintingTask) task.makeTask(TaskFactory.PAINTING);
+        Task painting =  task.makeTask(TaskFactory.PAINTING);
         painting.executeTask();
 
         //Then
         Assert.assertEquals(true,painting.isTaskExecuted());
-        Assert.assertEquals("white",painting.getColor());
+        Assert.assertEquals("white",painting.getTaskName());
 
     }
     @Test
@@ -36,12 +42,12 @@ public class TaskFactoryTestSuite {
         //Given
         TaskFactory drivingTask = new TaskFactory();
         //When
-        DrivingTask driving = (DrivingTask)drivingTask.makeTask(TaskFactory.DRIVING);
+        Task driving = drivingTask.makeTask(TaskFactory.DRIVING);
         driving.executeTask();
 
         //Then
         Assert.assertEquals(true,driving.isTaskExecuted());
-        Assert.assertEquals("home",driving.getWhere());
+        Assert.assertEquals("home",driving.getTaskName());
 
     }
 }

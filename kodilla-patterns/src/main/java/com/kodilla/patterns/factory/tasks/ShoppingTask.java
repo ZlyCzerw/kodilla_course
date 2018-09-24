@@ -7,6 +7,9 @@ public class ShoppingTask implements Task {
     private double quantity;
     private int executed = 0;
 
+    public ShoppingTask() {
+    }
+
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
         this.whatToBuy = whatToBuy;
