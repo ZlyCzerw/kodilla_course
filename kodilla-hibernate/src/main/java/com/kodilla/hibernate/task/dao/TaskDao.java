@@ -8,5 +8,4 @@ import java.util.List;
 public interface TaskDao extends CrudRepository<Task, Integer> {
 
     List <Task> findByDuration (int duration);
-
 }
