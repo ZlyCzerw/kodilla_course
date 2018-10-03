@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
 import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
@@ -20,7 +21,10 @@ import java.math.BigDecimal;
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
-
+    @Resource
+    private ProductDao productDao;
+    @Resource
+    private ItemDao itemDao;
     @Test
     public void testInvoiceDaoSave(){
         //Given
@@ -43,18 +47,34 @@ public class InvoiceDaoTestSuite {
         product1.getItems().add(item2);
         product2.getItems().add(item3);
         product2.getItems().add(item4);
+        product2.getItems().add(item5);
 
         item1.setProduct(product1);
         item2.setProduct(product1);
         item3.setProduct(product2);
         item4.setProduct(product2);
+        item5.setProduct(product2);
 
         invoice1.getItems().add(item1);
         invoice1.getItems().add(item3);
         invoice2.getItems().add(item2);
         invoice2.getItems().add(item4);
         invoice2.getItems().add(item5);
+
+        item1.setInvoice(invoice1);
+        item3.setInvoice(invoice1);
+        item2.setInvoice(invoice2);
+        item4.setInvoice(invoice2);
+        item5.setInvoice(invoice2);
+        ;
         //When
+        productDao.save(product1);
+        productDao.save(product2);
+        itemDao.save(item1);
+        itemDao.save(item2);
+        itemDao.save(item3);
+        itemDao.save(item4);
+        itemDao.save(item5);
         invoiceDao.save(invoice1);
         invoiceDao.save(invoice2);
 
@@ -64,7 +84,16 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0, id1);
         Assert.assertNotEquals(0, id2);
         //CleanUp
-        invoiceDao.delete(id1);
-        invoiceDao.delete(id2);
+        itemDao.delete(item1);
+        itemDao.delete(item2);
+        itemDao.delete(item3);
+        itemDao.delete(item4);
+        itemDao.delete(item5);
+
+        productDao.delete(product1);
+        productDao.delete(product2);
+
+        invoiceDao.delete(invoice1);
+        invoiceDao.delete(invoice2);
     }
 }
