@@ -33,7 +33,7 @@ public class Invoice {
             targetEntity = Item.class,
             mappedBy = "invoice",
             cascade = CascadeType.ALL,
-            fetch = FetchType.EAGER
+            fetch = FetchType.LAZY
     )
     public List<Item> getItems() {
         return items;

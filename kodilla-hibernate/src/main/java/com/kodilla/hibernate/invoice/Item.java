@@ -30,12 +30,12 @@ public class Item {
     public int getId() {
         return id;
     }
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne//(cascade = CascadeType.ALL)
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
         return product;
     }
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne//(cascade = CascadeType.ALL)
     @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice() {
         return invoice;
