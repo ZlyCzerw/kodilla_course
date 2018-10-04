@@ -14,17 +14,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
 
-//  private ProductDao productDao;
-   // @Resource
-  //  private ItemDao itemDao;
     @Test
     public void testInvoiceDaoSave(){
         //Given
@@ -68,32 +67,24 @@ public class InvoiceDaoTestSuite {
         item5.setInvoice(invoice2);
         ;
         //When
-    /*    productDao.save(product1);
-        productDao.save(product2);
-        itemDao.save(item1);
-        itemDao.save(item2);
-        itemDao.save(item3);
-        itemDao.save(item4);
-        itemDao.save(item5);
+//        productDao.save(product1);
+//        productDao.save(product2);
+//        itemDao.save(item1);
+//        itemDao.save(item2);
+//        itemDao.save(item3);
+//        itemDao.save(item4);
+//        itemDao.save(item5);
         invoiceDao.save(invoice1);
-   */      invoiceDao.save(invoice2);
+        invoiceDao.save(invoice2);
 
-    //    int id1 = invoice1.getId();
+        int id1 = invoice1.getId();
         int id2 = invoice2.getId();
         //Then
-      //  Assert.assertNotEquals(0, id1);
+        Assert.assertNotEquals(0, id1);
         Assert.assertNotEquals(0, id2);
-        //CleanUp
-      //  itemDao.delete(item1);
-     /*   itemDao.delete(item2);
-        itemDao.delete(item3);
-        itemDao.delete(item4);
-        itemDao.delete(item5);
-
-        productDao.delete(product1);
-        productDao.delete(product2);
+       // CleanUp
 
         invoiceDao.delete(id1);
-        invoiceDao.delete(invoice2);*/
+        invoiceDao.delete(invoice2);
     }
 }
