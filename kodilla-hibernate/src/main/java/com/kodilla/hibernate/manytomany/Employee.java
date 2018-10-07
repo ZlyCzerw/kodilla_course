@@ -5,6 +5,9 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery( name = "Employee.employeeWhoseName",
+query = "FROM Employee WHERE lastName LIKE :LASTNAME")
+
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -41,6 +44,7 @@ public class Employee {
     private void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     @Column(name = "LASTNAME")
     public String getLastName() {
         return lastName;

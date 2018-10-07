@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+
 @Entity
 @Table(name = "TASKS")
 public final class Task {
