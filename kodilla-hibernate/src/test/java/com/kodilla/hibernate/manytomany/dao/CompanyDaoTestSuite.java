@@ -81,6 +81,8 @@ public class CompanyDaoTestSuite {
         System.out.println(employeeList);
         //Then
         Assert.assertNotEquals(0,employeeList.size());
+        //CleanUp
+        employeeDao.delete(employeeList);
     }
     @Test
     public void testCompanyNameStartsWith(){
@@ -96,7 +98,8 @@ public class CompanyDaoTestSuite {
         List companiesList = companyDao.companyNameStartsWith("Grey");//("Grey Matter");
         //Then
         Assert.assertNotEquals(0,companiesList.size());
-
+        //cleanUp
+        companyDao.delete(companiesList);
     }
 
 
