@@ -8,7 +8,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.companyNameStartsWith",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT(:BEGINSWITH,'%')",
+        query = "SELECT * FROM COMPANIES WHERE (SELECT LEFT (COMPANY_NAME, 3)) LIKE :BEGINSWITH",
         resultClass = Company.class
 )
 @Entity

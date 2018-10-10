@@ -95,7 +95,7 @@ public class CompanyDaoTestSuite {
         companyDao.save(softwareMachine);
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
-        List companiesList = companyDao.companyNameStartsWith("Grey");//("Grey Matter");
+        List companiesList = companyDao.companyNameStartsWith("Dat");
         //Then
         Assert.assertNotEquals(0,companiesList.size());
         //cleanUp
