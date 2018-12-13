@@ -1,16 +1,24 @@
 package com.kodilla.hibernate.manytomany;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-
-@NamedNativeQuery(
-        name = "Company.companyNameStartsWith",
-        query = "SELECT * FROM COMPANIES WHERE (SELECT LEFT (COMPANY_NAME, 3)) LIKE :BEGINSWITH",
-        resultClass = Company.class
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Company.companyNameStartsWith",
+                query = "SELECT * FROM COMPANIES WHERE (SELECT LEFT (COMPANY_NAME, 3)) LIKE :BEGINSWITH",
+                resultClass = Company.class
+        ),
+        @NamedNativeQuery(
+                name = "Company.companyByNameFragment",
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :ARG, '%')"
+        )
+})
+@Component
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
@@ -32,6 +40,7 @@ public class Company {
     public int getId() {
         return id;
     }
+
     @Column(name = "COMPANY_NAME")
     public String getCompanyName() {
         return companyName;
