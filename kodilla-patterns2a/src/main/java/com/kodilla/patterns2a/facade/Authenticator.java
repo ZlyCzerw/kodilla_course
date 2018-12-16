@@ -9,6 +9,7 @@ public class Authenticator {
 
     public boolean isAuthenticated(Long userId){
         Random random = new Random();
-        return random.nextBoolean();
+        //return random.nextBoolean();
+        return true;
     }
 }
