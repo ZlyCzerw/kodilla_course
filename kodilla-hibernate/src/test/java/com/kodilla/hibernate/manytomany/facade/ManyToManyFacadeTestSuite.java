@@ -6,11 +6,17 @@ import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
+import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.util.List;
-
+@Transactional
+@Rollback(false)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ManyToManyFacadeTestSuite {
 
@@ -20,7 +26,6 @@ public class ManyToManyFacadeTestSuite {
     CompanyDao companyDao;
     @Autowired
     EmployeeDao employeeDao;
-
 
 
     @Test
@@ -52,10 +57,12 @@ public class ManyToManyFacadeTestSuite {
         companyDao.save(greyMatter);
 
         //When
-        List<Company> companies = manyToManyFacade.findCompanyByNameFragment("%e%");
+        List<Employee> employees = manyToManyFacade.findEmployeesByNameFragment("i");
+       List<Company> companies = manyToManyFacade.findCompanyByNameFragment("i");
 
         //Then
-        Assert.assertEquals(2L,companies.size());
+        Assert.assertEquals(5,employees.size());
+       Assert.assertEquals(5,companies.size());
 
 
     }

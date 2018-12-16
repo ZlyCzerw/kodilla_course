@@ -10,15 +10,16 @@ import java.util.List;
 @NamedNativeQueries({
         @NamedNativeQuery(
                 name = "Company.companyNameStartsWith",
-                query = "SELECT * FROM COMPANIES WHERE (SELECT LEFT (COMPANY_NAME, 3)) LIKE :BEGINSWITH",
+                query = "SELECT * FROM COMPANIES WHERE LEFT (COMPANY_NAME, 3) LIKE :BEGINSWITH",
                 resultClass = Company.class
         ),
         @NamedNativeQuery(
                 name = "Company.companyByNameFragment",
-                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :ARG, '%')"
+                query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :ARG, '%')",
+                resultClass = Company.class
         )
 })
-@Component
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

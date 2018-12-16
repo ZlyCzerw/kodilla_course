@@ -7,13 +7,14 @@ import org.mockito.Spy;
 
 public class TaskFactoryTestSuite {
 
+    TaskFactory task = new TaskFactory();
     @Test
     public void shopingTaskTest(){
      //Given
-     TaskFactory shopingTask = new TaskFactory();
+
      Task spyTask = Mockito.spy(ShoppingTask.class);
      //When
-        Task shopping = shopingTask.makeTask(TaskFactory.SHOPPING);
+        Task shopping = task.makeTask(TaskFactory.SHOPPING);
         shopping.executeTask();
         spyTask.executeTask();
 
@@ -27,8 +28,8 @@ public class TaskFactoryTestSuite {
     @Test
     public void paintingTaskTest(){
         //Given
-        TaskFactory task = new TaskFactory();
-        //Whendr
+
+        //When
         Task painting =  task.makeTask(TaskFactory.PAINTING);
         painting.executeTask();
 
@@ -40,9 +41,9 @@ public class TaskFactoryTestSuite {
     @Test
     public void drivingTaskTest(){
         //Given
-        TaskFactory drivingTask = new TaskFactory();
+
         //When
-        Task driving = drivingTask.makeTask(TaskFactory.DRIVING);
+        Task driving = task.makeTask(TaskFactory.DRIVING);
         driving.executeTask();
 
         //Then
