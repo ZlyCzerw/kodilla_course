@@ -17,7 +17,11 @@ public class BigMacTestSuite {
         System.out.println(bigMac);
         //When
         int howManySouses = bigMac.getIngredients().size();
+        String bunType = bigMac.getBun();
+        String ingredientType = bigMac.getIngredients().get(0);
         //Then
         Assert.assertEquals(1,howManySouses);
+        Assert.assertEquals("Without sesame",bunType);
+        Assert.assertEquals("Standard",ingredientType);
     }
 }
