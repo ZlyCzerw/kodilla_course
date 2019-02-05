@@ -67,7 +67,7 @@ public class BigMac {
             if (ingredient.equals(ISLANDS)||ingredient.equals(BBQ)||ingredient.equals(STANDARD)) {
                 this.ingredients.add(ingredient);
             }else {
-                throw new IllegalStateException("takich bułek nie ma w ofercie");
+                throw new IllegalStateException("takich sosów nie ma w ofercie");
             }
             return this;
             }

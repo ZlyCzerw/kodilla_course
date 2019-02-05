@@ -7,7 +7,7 @@ import org.junit.Test;
 public class BigMacTestSuite {
 
     @Test
-    public void bigMacTest(){
+    public void shouldMakeABigMac(){
         //Given
        BigMac bigMac= new BigMac.BigMacBuilder()
                .bun(BigMac.BigMacBuilder.CLEAN)
@@ -24,4 +24,47 @@ public class BigMacTestSuite {
         Assert.assertEquals("Without sesame",bunType);
         Assert.assertEquals("Standard",ingredientType);
     }
+    @Test
+    public void shouldMakeAVeganBigMac(){
+        //Given
+        BigMac bigMac= new BigMac.BigMacBuilder()
+                .bun(BigMac.BigMacBuilder.WITHSESAME)
+                .burgers(0)
+                .ingredients(BigMac.BigMacBuilder.BBQ)
+                .build();
+        System.out.println(bigMac);
+        //When
+        int howManyBurgers = bigMac.getBurgers();
+        String bunType = bigMac.getBun();
+        String ingredientType = bigMac.getIngredients().get(0);
+        //Then
+        Assert.assertEquals(0,howManyBurgers);
+        Assert.assertEquals("With sesame",bunType);
+        Assert.assertEquals("barbecue",ingredientType);
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void whenExceptionThrown_thenAssertionSucceeds(){
+       //given
+        BigMac bigMac = new BigMac.BigMacBuilder()
+                .bun(BigMac.BigMacBuilder.CLEAN)
+                .ingredients("Ketchup")
+                .burgers(2)
+                .build();
+        //when
+
+        //then
+    }
+    @Test(expected = IllegalStateException.class)
+    public void nullBurgerExceptionThrown_thenAssertionSucceeds(){
+        //given
+        BigMac bigMac = new BigMac.BigMacBuilder()
+                .bun(BigMac.BigMacBuilder.CLEAN)
+                .ingredients(BigMac.BigMacBuilder.CLEAN)
+                .burgers(0)
+                .build();
+        //when
+        //then
+    }
+
 }
