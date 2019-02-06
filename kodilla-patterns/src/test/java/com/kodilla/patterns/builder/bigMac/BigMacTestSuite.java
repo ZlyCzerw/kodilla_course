@@ -44,7 +44,7 @@ public class BigMacTestSuite {
     }
 
     @Test(expected = IllegalStateException.class)
-    public void whenExceptionThrown_thenAssertionSucceeds(){
+    public void exceptionThrownAtWrongIngredient(){
        //given
         BigMac bigMac = new BigMac.BigMacBuilder()
                 .bun(BigMac.BigMacBuilder.CLEAN)
@@ -56,7 +56,7 @@ public class BigMacTestSuite {
         //then
     }
     @Test(expected = IllegalStateException.class)
-    public void nullBurgerExceptionThrown_thenAssertionSucceeds(){
+    public void exceptionThrownAtBuilderMisused(){
         //given
         BigMac bigMac = new BigMac.BigMacBuilder()
                 .bun(BigMac.BigMacBuilder.CLEAN)
